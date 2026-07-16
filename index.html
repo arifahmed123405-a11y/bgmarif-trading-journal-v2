@@ -146,6 +146,13 @@
             color: #2563eb;
             cursor: pointer;
             text-decoration: underline;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .toggle-link a:hover {
+            color: #1d4ed8;
+            font-size: 15px;
         }
 
         .error-message {
@@ -298,12 +305,15 @@
         function switchToSignup() {
             document.getElementById('loginForm').style.display = 'none';
             document.getElementById('signupForm').style.display = 'block';
+            clearMessages();
+            document.getElementById('signupEmail').focus();
         }
 
         function switchToLogin() {
             document.getElementById('loginForm').style.display = 'block';
             document.getElementById('signupForm').style.display = 'none';
             clearMessages();
+            document.getElementById('loginEmail').focus();
         }
 
         function showError(elementId, message) {
